@@ -151,6 +151,9 @@ ol {
   color: #fff;
 }
 
+.text-indent{
+  text-indent: 1cm;
+}
 /* buttons */
 .primary-btn {
   display: inline-block;

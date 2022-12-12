@@ -24,7 +24,7 @@ $(document).ready(function () {
             email_tester: escapeHtml(emailTester.value),
             pesan_tester: escapeHtml(pesanTester.value),
             tgl_input: new Date().toISOString(),
-            status: 'pending'
+            status: 'Pending'
         };
         await addtesti(dataTesti);
     })

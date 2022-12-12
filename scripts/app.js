@@ -60,12 +60,20 @@ function findGetParameter(parameterName) {
     location.search
         .substr(1)
         .split("&")
-        .forEach(function(item) {
+        .forEach(function (item) {
             tmp = item.split("=");
             if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
         });
     return result;
 }
+
+const flassMessage = (icon, title, text) => {
+    Swal.fire({
+        icon,
+        title,
+        text,
+    });
+};
 
 window.db = db;
 window.base_url = base_url;
@@ -77,5 +85,7 @@ window.doc = firebasedatabase.doc;
 window.getDocs = firebasedatabase.getDocs;
 window.collection = firebasedatabase.collection;
 window.query = firebasedatabase.query;
+window.addDoc = firebasedatabase.addDoc;
 window.format_date = format_date;
+window.flassMessage = flassMessage;
 window.limit = firebasedatabase.limit;

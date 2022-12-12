@@ -158,17 +158,17 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="contact__form">
-                        <form action="#">
+                        <form action="#" method="post" id="formTestimoni">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <input type="text" placeholder="Nama Lengkap">
+                                    <input type="text" required placeholder="Nama Lengkap" name="namaLengkap" id="namaLengkap">
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="text" placeholder="Email">
+                                    <input type="email" required placeholder="Email" name="emailTester" id="emailTester">
                                 </div>
                                 <div class="col-lg-12">
-                                    <textarea placeholder="Testimoni"></textarea>
-                                    <button type="submit" class="site-btn">Kirim Testimoni</button>
+                                    <textarea placeholder="Testimoni" required name="pesanTester" id="pesanTester"></textarea>
+                                    <button type="submit" id="btnTesti" class="site-btn">Kirim Testimoni</button>
                                 </div>
                             </div>
                         </form>
@@ -228,16 +228,6 @@
     </footer>
     <!-- Footer Section End -->
 
-    <!-- Search Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search End -->
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -248,6 +238,9 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="scripts/app.js" type="module"></script>
+    <script src="scripts/utils/contact.js"></script>
     <script src="js/main.js"></script>
 </body>
 

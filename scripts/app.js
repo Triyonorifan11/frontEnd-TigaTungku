@@ -86,6 +86,7 @@ window.getDocs = firebasedatabase.getDocs;
 window.collection = firebasedatabase.collection;
 window.query = firebasedatabase.query;
 window.addDoc = firebasedatabase.addDoc;
+window.where = firebasedatabase.where;
 window.format_date = format_date;
 window.flassMessage = flassMessage;
 window.limit = firebasedatabase.limit;

@@ -864,6 +864,10 @@ ol {
   padding-bottom: 70px;
 }
 
+.testimonial__slider{
+  overflow-x: scroll;
+}
+
 .testimonial__slider .col-lg-6 {
   max-width: 100%;
 }

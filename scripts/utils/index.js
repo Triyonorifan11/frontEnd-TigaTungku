@@ -31,5 +31,45 @@ $(document).ready(function () {
             $(this).css('background-image', 'url(' + bg + ')');
         });
     }
+
+    const fetchTestiMoni = async () => {
+        const testimoni = document.querySelector('#testimoni');
+        const q = query(collection(db,'testimoni'), where('status', '==', 'Posting'));
+        const snapShot = await getDocs(q);
+        testimoni.innerHTML = '';
+        snapShot.forEach((doc) => {
+            const data = doc.data();
+            testimoni.innerHTML += `
+            <div class="col-lg-6 mb-3">
+                <div class="testimonial__item">
+                    <div class="testimonial__author">
+                        <div class="testimonial__author__pic">
+                            <img src="img/testimonial/icon.png" width="60%" alt="">
+                        </div>
+                        <div class="testimonial__author__text">
+                            <h5>${data.nama_lengkap}</h5>
+                            <span>${data.email_tester}</span>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="icon_star"></span>
+                        <span class="icon_star"></span>
+                        <span class="icon_star"></span>
+                        <span class="icon_star"></span>
+                        <span class="icon_star-half_alt"></span>
+                    </div>
+                    <p>${data.pesan_tester}</p>
+                </div>
+            </div>
+            ` 
+
+        });
+
+    }
+
+
     fetchProduk();
+    fetchTestiMoni();
+    
+    
 })

@@ -1,13 +1,12 @@
-$(document).ready(function () {
+$(document).ready(function(){
+    const rowDaftarProduk = document.querySelector('#daftar-produk');
     const fetchProduk = async () => {
-        const dataProduk = document.querySelector('#data-produk');
-        const q = query(collection(db,'products'), limit(8));
+        const q = query(collection(db,'products'));
         const snap = await getDocs(q);
-        // dataProduk.innerHTML = '';
         snap.forEach((doc) => {
             const data = doc.data();
             data.idProduk = doc.id;
-            dataProduk.innerHTML += `
+            rowDaftarProduk.innerHTML += `
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="product__item">
                     <div class="product__item__pic set-bg" data-setbg="${data.foto_produk}">

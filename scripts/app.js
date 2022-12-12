@@ -32,10 +32,34 @@ function formatRupiah(angka) {
     rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
     return rupiah;
 }
+function base_url(param = "/", params = "") {
+    if (param[0] != "/") {
+        param = "/" + param;
+    }
+    if (!param.includes(".html")) {
+        param = param + ".html";
+    }
+    return window.location.origin + param + params;
+}
+
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function(item) {
+            tmp = item.split("=");
+            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}
 
 window.db = db;
-window.fb = firebasedatabase;
+window.base_url = base_url;
 window.formatRupiah = formatRupiah;
+window.findGetParameter = findGetParameter;
+window.fb = firebasedatabase;
 window.getDocs = firebasedatabase.getDocs;
 window.collection = firebasedatabase.collection;
 window.query = firebasedatabase.query;

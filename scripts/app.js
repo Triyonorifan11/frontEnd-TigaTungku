@@ -32,6 +32,18 @@ function formatRupiah(angka) {
     rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
     return rupiah;
 }
+
+function format_date(date) {
+    const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    };
+    const dateTemp = new Date(date);
+    return dateTemp.toLocaleDateString("id-ID", options);
+}
+
 function base_url(param = "/", params = "") {
     if (param[0] != "/") {
         param = "/" + param;
@@ -60,7 +72,10 @@ window.base_url = base_url;
 window.formatRupiah = formatRupiah;
 window.findGetParameter = findGetParameter;
 window.fb = firebasedatabase;
+window.getDoc = firebasedatabase.getDoc;
+window.doc = firebasedatabase.doc;
 window.getDocs = firebasedatabase.getDocs;
 window.collection = firebasedatabase.collection;
 window.query = firebasedatabase.query;
+window.format_date = format_date;
 window.limit = firebasedatabase.limit;

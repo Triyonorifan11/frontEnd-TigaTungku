@@ -15,7 +15,7 @@ $(document).ready(function(){
                         </div>
                     </div>
                     <div class="product__item__text">
-                        <h6><a href="${base_url('shop-details', '?produk=' + data.idProduk)}" target="_blank">${data.nama_produk}</a></h6>
+                        <h6><a href="${base_url('shop-details', '?produk=' + data.idProduk)}">${data.nama_produk}</a></h6>
                         <div class="product__item__price">Rp${formatRupiah(data.harga_produk)}</div>
                         <div class="cart_add">
                             <a href="${data.linkShopee_produk}" target="_blank">Link Shopee</a>
@@ -29,6 +29,8 @@ $(document).ready(function(){
             let bg = $(this).data('setbg');
             $(this).css('background-image', 'url(' + bg + ')');
         });
+
+        
     }
     fetchProduk();
 })

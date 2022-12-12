@@ -5,6 +5,7 @@ $(document).ready(function(){
     const hargaPRoduk = document.getElementById('hargaPRoduk');
     const big_img = document.querySelector('.big_img');
     const deskripsiProduk = document.getElementById('deskripsiProduk');
+    const crumbProduk = document.getElementById('crumbProduk');
     const linkProduk = document.getElementById('linkProduk');
     if(!param){
         window.location.href = './index.html';
@@ -15,6 +16,7 @@ $(document).ready(function(){
         const elemen = docSnap.data();
         tglUpdate.innerText = format_date(elemen.tgl_diupdate);
         namaProduk.innerText = elemen.nama_produk;
+        crumbProduk.innerText = elemen.nama_produk;
         hargaPRoduk.innerHTML = `Rp${formatRupiah(elemen.harga_produk)}`;
         big_img.setAttribute('src', elemen.foto_produk);
         deskripsiProduk.innerHTML = elemen.deskripsi_produk;

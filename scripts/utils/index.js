@@ -51,13 +51,6 @@ $(document).ready(function () {
                             <span>${data.email_tester}</span>
                         </div>
                     </div>
-                    <div class="rating">
-                        <span class="icon_star"></span>
-                        <span class="icon_star"></span>
-                        <span class="icon_star"></span>
-                        <span class="icon_star"></span>
-                        <span class="icon_star-half_alt"></span>
-                    </div>
                     <p>${data.pesan_tester}</p>
                 </div>
             </div>

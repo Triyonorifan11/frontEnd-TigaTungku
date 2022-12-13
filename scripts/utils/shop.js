@@ -2,6 +2,7 @@ $(document).ready(function () {
     const rowDaftarProduk = document.querySelector('#daftar-produk');
     const searchProduk = document.querySelector('#searchProduk');
     const formSearch = document.querySelector('#formSearch');
+    const datalistOptions = document.getElementById('datalistOptions');
 
     function escapeHtml(text) {
         return text
@@ -37,6 +38,7 @@ $(document).ready(function () {
                 </div>
             </div>
             `
+            datalistOptions.innerHTML += `<option value="${data.nama_produk}">`
         });
         $('.set-bg').each(function () {
             let bg = $(this).data('setbg');
@@ -51,15 +53,13 @@ $(document).ready(function () {
         e.preventDefault();
         btnRefresh.classList.remove('d-none')
         const dataInputSearch = escapeHtml(searchProduk.value);
-        console.log(dataInputSearch);
-        let q = query(collection(db, 'products'), orderBy('nama_produk'), where('nama_produk', '<=', dataInputSearch))
+        let q = query(collection(db, 'products'), where('nama_produk', '==', dataInputSearch))
         const snapDoc = await getDocs(q);
         rowDaftarProduk.innerHTML = 'Search..';
         rowDaftarProduk.innerHTML = '';
         snapDoc.forEach((doc) => {
             const data = doc.data();
             if (data) {
-                console.log(data);
                 data.idProduk = doc.id;
                 rowDaftarProduk.innerHTML += `
             <div class="col-lg-3 col-md-6 col-sm-6">

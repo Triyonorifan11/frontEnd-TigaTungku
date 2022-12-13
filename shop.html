@@ -14,7 +14,7 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/flaticon.css" type="text/css">
@@ -102,6 +102,21 @@
     <!-- Shop Section Begin -->
     <section class="shop spad">
         <div class="container">
+            <div class="shop__option">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="shop__option__search">
+                            <form action="#" id="formSearch">
+                                <input type="text" name="searchProduk" required id="searchProduk" placeholder="Search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-7">
+                        <button type="button" class="btn btn-dark d-none" id="btnRefresh"><i class="bi bi-arrow-counterclockwise"></i></button>
+                    </div>
+                </div>
+            </div>
             <div class="row" id="daftar-produk">
                 <div class="testimonial__slider d-flex">
                     <div class="section-title text-center">

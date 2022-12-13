@@ -1,8 +1,9 @@
-$(document).ready(function(){
+$(document).ready(function () {
     const rowDaftarProduk = document.querySelector('#daftar-produk');
     const fetchAllProduk = async () => {
-        const q = query(collection(db,'products'));
+        const q = query(collection(db, 'products'));
         const snap = await getDocs(q);
+        rowDaftarProduk.innerHTML = '';
         snap.forEach((doc) => {
             const data = doc.data();
             data.idProduk = doc.id;
@@ -11,7 +12,7 @@ $(document).ready(function(){
                 <div class="product__item">
                     <div class="product__item__pic set-bg" data-setbg="${data.foto_produk}">
                         <div class="product__label">
-                            <span>${data.nama_produk}</span>
+                            <span id="namaProduk">${data.nama_produk}</span>
                         </div>
                     </div>
                     <div class="product__item__text">
@@ -30,7 +31,9 @@ $(document).ready(function(){
             $(this).css('background-image', 'url(' + bg + ')');
         });
 
-        
     }
     fetchAllProduk();
+
+
+
 })

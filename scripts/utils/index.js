@@ -40,7 +40,7 @@ $(document).ready(function () {
         snapShot.forEach((doc) => {
             const data = doc.data();
             testimoni.innerHTML += `
-            <div class="col-lg-6 mb-3">
+            <div class="col-lg-6 col-md-6 col-12">
                 <div class="testimonial__item">
                     <div class="testimonial__author">
                         <div class="testimonial__author__pic">

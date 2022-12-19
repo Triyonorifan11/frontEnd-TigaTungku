@@ -529,7 +529,7 @@ ol {
 
 .hero__text {
   text-align: center;
-  background: #ffffff;
+  background: rgba(255, 255, 255, .8);
   padding: 65px 70px 70px;
   position: relative;
 }
@@ -550,6 +550,7 @@ ol {
   font-weight: 700;
   font-style: italic;
   margin-bottom: 18px;
+  font-family: "Playfair Display", serif;
   position: relative;
   top: 100px;
   opacity: 0;
@@ -1038,9 +1039,19 @@ ol {
 .product__item {
   margin-bottom: 40px;
 }
-.product__item:hover .product__item__pic .product__label span {
+
+/* .product__item:hover .product__item__pic .product__label span {
   background: #f08632;
   color: #ffffff;
+} */
+
+.product__item:hover .product__item__text h6 a {
+  background: #f08632;
+  color: #ffffff;
+  padding: 5px;
+}
+.product__item .product__item__text h6 a {
+  transition: .2s;
 }
 .product__item:hover .product__item__text .product__item__price {
   opacity: 0;
